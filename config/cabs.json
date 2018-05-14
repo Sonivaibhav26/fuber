@@ -1,10 +1,14 @@
 {
-    "driver": "Driver A",
-    "locationX": 3,
-    "locationY": 4,
-},
-{
-    "driver": "Driver A",
-    "locationX": 3,
-    "locationY": 4,
+    "cabsList": [
+        {
+            "driver": "Driver A",
+            "locationX": 3,
+            "locationY": 4
+        },
+        {
+            "driver": "Driver A",
+            "locationX": 3,
+            "locationY": 4
+        }
+    ]
 }
