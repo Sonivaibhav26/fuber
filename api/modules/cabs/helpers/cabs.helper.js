@@ -9,11 +9,18 @@ const calculateDistance = (locX, locY, cabX, cabY) => {
     return Math.sqrt(length * length + breadth * breadth);
 };
 
-const updateList = async idealcab => {
+const updateList = async (idealcab, active, locationX, locationY) => {
     const cabs = JSON.parse(fs.readFileSync(__dirname + '/../../../../config/cabs.json', 'utf8')).cabsList
         .map(cab => {
             if (cab.number === idealcab.cab.number) {
-                cab.active = false;
+                if (active === false) {
+                    cab.active = false;
+                } else {
+                    cab.active = true;
+                    cab.locationX = locationX;
+                    cab.locationY = locationY;
+                }
+
                 return cab;
             }
             return cab;
@@ -49,6 +56,9 @@ export const book = async (x, y, pink) => {
         cabs = cabs.filter(cab => cab.pink === true);
     }
 
+    if (cabs.length === 0) {
+        return null;
+    }
 
     let idealcab = { cab: null, distance: null };
 
@@ -65,7 +75,23 @@ export const book = async (x, y, pink) => {
         }
     });
 
-    await updateList(idealcab);
+    await updateList(idealcab, false, null, null);
 
     return idealcab;
+};
+
+export const end = async (x, y, number) => {
+    let idealcab = { cab: null, distance: null };
+    let cab = JSON.parse(fs.readFileSync(__dirname + '/../../../../config/cabs.json', 'utf8')).cabsList
+        .filter(cab => cab.number === number);
+
+    if (cab.length === 0) {
+        return null;
+    }
+
+    idealcab.cab = cab[0];
+
+    await updateList(idealcab, true, x, y);
+
+    return { message: "trip completed" };
 };

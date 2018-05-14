@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getCabsList, bookCab, getPinkCabsList } from "./../modules/cabs";
+import { getCabsList, bookCab, getPinkCabsList, endTrip } from "./../modules/cabs";
 
 const router = Router();
 
@@ -14,5 +14,9 @@ router
 router
     .route('/cabs/book')
     .post(bookCab);
+
+router
+    .route('/cabs/endtrip')
+    .post(endTrip);
 
 export default router;
