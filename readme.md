@@ -7,65 +7,44 @@
 
 ## installation
 
-    after clone the repo
-
-    ```shell
-    $ cd fuber
-    ```
-    now install dependencies
-
-    ```shell
-        $ npm i
-    ```
+   # after clone the repo
+    ` $ cd fuber`
+ 
+   # now install dependencies
+    `$ npm i`
 
 ## Run Tests
-    browse in the directory
 
-    ```shell
-        $ npm test
-    ```
+   # browse in the directory
+    `$ npm test`
 
 ## Run App
-    browse in the directory
-
-    ```shell
-        $ npm start
-    ```
+   # browse in the directory
+    `$ npm start`
 
 ## Run Api's
 
-    will list all available cabs
+   # will list all available cabs
+    `GET /api/cabs/list`
 
-    ```shell
-        GET /api/cabs/list
-    ```
-
-    will list all available pink cabs
-
-    ```shell
-        GET /api/cabs/list/pink
-    ```
+   # will list all available pink cabs
+    `GET /api/cabs/list/pink`
 
 
-    will book a cab
+   # will book a cab
     requires:
         req.body.locationX : number
         req.body.locationy : number
         req.body.pink : boolean
 
-    ```shell
-        post /api/cabs/book
-    ```
+    `post /api/cabs/book`
 
 
-    will end the trip
+   # will end the trip
     requires:
         req.body.locationX : number
         req.body.locationy : number
         req.body.number : number
 
-    ```shell
-        post /api/cabs/endtrip
-    ```
-
-
+    `post /api/cabs/endtrip`
+    
