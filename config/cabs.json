@@ -3,12 +3,42 @@
         {
             "driver": "Driver A",
             "locationX": 3,
-            "locationY": 4
+            "locationY": 4,
+            "pink": true,
+            "number": 1,
+            "active": true
         },
         {
-            "driver": "Driver A",
+            "driver": "Driver B",
             "locationX": 3,
-            "locationY": 4
+            "locationY": 6,
+            "pink": false,
+            "number": 2,
+            "active": true
+        },
+        {
+            "driver": "Driver C",
+            "locationX": 3,
+            "locationY": 5,
+            "pink": false,
+            "number": 3,
+            "active": false
+        },
+        {
+            "driver": "Driver D",
+            "locationX": 4,
+            "locationY": 6,
+            "pink": false,
+            "number": 4,
+            "active": true
+        },
+        {
+            "driver": "Driver E",
+            "locationX": 4,
+            "locationY": 4,
+            "pink": true,
+            "number": 5,
+            "active": true
         }
     ]
 }
