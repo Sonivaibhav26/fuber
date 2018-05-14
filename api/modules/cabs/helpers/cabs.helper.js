@@ -1,4 +1,3 @@
-import config from '../../../../config/cabs.json';
 import fs from "fs";
 
 const diffrence = (x, y) => (x > y) ? x - y : y - x;

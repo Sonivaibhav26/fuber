@@ -5,15 +5,19 @@
   "main": "index.js",
   "dependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^5.1.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-core/register ./tests/tests.js",
     "start": "babel-node index.js"
   },
   "author": "Vaibhav Soni",
